@@ -1,0 +1,51 @@
+<p>verclima works!</p>
+
+
+<form>
+    <input type="text"
+    [(ngModel)]="termino"
+    name="termino"    
+    class="form-control"
+   
+    />
+</form>
+
+<!-- <app-busqueda (onEnter)="buscar($event)" ></app-busqueda> -->
+
+<button (click)="obtenerClima()">ver clima</button>
+
+
+        <ul *ngFor="let item of info">
+            <li>
+                <div class="card">
+                      
+                   <div class="container">
+                     <h3> {{item.day}}  </h3>
+                     <hr>
+                     <img class="small-img" [src]="item.iconUrl">
+                     <p> {{item.min_temp.c}}°</p>
+                     <p> {{item.max_temp.c}}°</p>
+                   </div>
+                 </div>
+            </li>
+        </ul>
+
+        
+<button (click)="obtenerClimaPorUbicacion()">ver ubicacion</button>
+
+
+<ul *ngFor="let item of climaubicacion">
+    <li>
+        <div class="card">
+              
+           <div class="container">
+             <h3> {{item.day}}  </h3>
+             <hr>
+             <img class="small-img" [src]="item.iconUrl">
+             <p> {{item.min_temp.c}}°</p>
+             <p> {{item.max_temp.c}}°</p>
+           </div>
+         </div>
+    </li>
+</ul>
+   
